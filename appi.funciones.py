@@ -11,11 +11,9 @@ df_productoras = pd.read_csv('productoras.csv')
 df_diectores = pd.read_csv('dir.csv')
 
 
-
-
-
 app = FastAPI()
 
+# http://127.0.0.1:8000/docs
  
 @app.get("/peliculas_idioma/{Idioma}")
 def pelicula_idioma(idioma):
