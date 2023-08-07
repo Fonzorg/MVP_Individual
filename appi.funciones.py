@@ -9,11 +9,15 @@ df_franquicia = pd.read_csv('franquicias.csv')
 df_paises = pd.read_csv('paises.csv')
 df_productoras = pd.read_csv('productoras.csv')
 df_diectores = pd.read_csv('dir.csv')
+df_movies = pd.read_csv('movies_ampliada.csv')
 
 
 app = FastAPI()
 
-# http://127.0.0.1:8000/docs
+# Entrenamiento del modelo de recomendación
+tfidf = TfidfVectorizer()
+tfidf_matrix = tfidf.fit_transform(df_movies['title'])
+matriz_simil = cosine_similarity(tfidf_matrix)
  
 @app.get("/peliculas_idioma/{Idioma}")
 def pelicula_idioma(idioma):
