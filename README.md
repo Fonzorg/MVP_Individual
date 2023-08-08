@@ -9,15 +9,17 @@
 El objetivo principal del presente proyecto es entregar un “Minimum Viable Product” (MVP), que proporcione una recomendacion a los usuarios.
 Un MVP es un producto con suficientes características para satisfacer a los clientes iniciales y proporcionar retroalimentación para el desarrollo futuro. 
 
-## Situacion.
+## Tareas desarrolladas.
 
 Para lograr el objetivo principal, debemos desarrollar procesos de ETL, un Analisas Exploratorio de los Datos y desarrollar un proyecto de machine learning.
 Este proceso busca desarrollar, entrenar, desplegar y monitorear un modelo que aprende de los datos. En este caso, los pasos seguidos fueron los siguientes:
 
-Adquisición de datos: Consistio en obtener los datos que se usaron en el modelo.
+# Adquisición de datos: 
+Consistio en obtener los datos que se usaron en el modelo.
 En este caso particular, tales datos fueron extraidos de dos archivow .csv: 'movies' y 'credit'.
 
-Preprocesamiento: Incluyo procedimientos de ETL, como normalizar, combinar, eliminar y crear variables, todo ello en busca de mejorar su calidad y adecuarlas al modelo.
+# Preprocesamiento: 
+Incluyo procedimientos de ETL, como normalizar, combinar, eliminar y crear variables, todo ello en busca de mejorar su calidad y adecuarlas al modelo.
 Siguiendo las consignas del proyecto, se realizaron las siguientes Transformaciones:
  _Se desanidaron los datos de las columnas 'belongs_to_collection', 'production_companies', 'production_compañies' y 'geners'._
  _Los valores nulos de los campos revenue, budget se rellenados por el número 0._
@@ -27,14 +29,18 @@ Siguiendo las consignas del proyecto, se realizaron las siguientes Transformacio
  _Se crearn datasets mas pequeños y acordes a las necesidades de las distintas funciones desarrolladas._
 _El prosesamiento aludido esta en dos etapas, dividido en dos archivos: 'mvp_transformaciones' y 'mvp_final_transformacion' en este repositorio.
 
-Análisis exploratorio (EDA): Implica visualizar y correlacionar los datos para entenderlos mejor y detectar posibles problemas o patrones. 
+# Análisis exploratorio (EDA): 
+Implico visualizar y correlacionar los datos para entenderlos mejor y detectar posibles problemas o patrones. 
 Vale decir que este paso suele hacerse tambien antes de preprosesamiento.
 _Este analisis se halla en el archivo 'eda_movies' en este repositorio_
 
-Algoritmo machine learning: Se refiere a la elección del método o técnica que se aplicará al problema. 
-En este caso me decidi por ........... Luego he entrenado el modelo y validado el mismo lugrando optimizarlo.
+# Algoritmo machine learning: 
+Se refiere a la elección del método o técnica que se aplicará al problema. 
+En este caso me decidi por ........... para aplicar al problema, vale decir a la recoemndacion solicitada en la consigna.
+Luego he entrenado el modelo y validado el mismo logrando optimizarlo.
 
-Generar una api y desplegar la misma por Rendel: Implica poner el proyecto a disposicion para que pueda ser usado por otros. Para este proyecto, y siguiendo las consignas, se disponibilizaron las siguientes funciones:
+# Generar una api y desplegar la misma por Rendel: 
+Implico poner el proyecto a disposicion para que pueda ser usado por otros. Para este proyecto, y siguiendo las consignas, se disponibilizaron las siguientes funciones:
 def peliculas_idioma(idioma)
 def peliculas_duracion(pelicula)
 def franquicia(franquicia)
