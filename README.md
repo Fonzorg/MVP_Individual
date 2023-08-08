@@ -1,3 +1,5 @@
+![LogoREADME](https://github.com/Fonzorg/MVP_Individual/assets/108815192/c418e5f8-0524-4e7a-83ea-eebd78bc3de3)
+
 # MVP Proyecto Individual
 ## Machine Learning Operations (MLOps)
 ### _Alfonzo Rubianes Gravier_
@@ -7,7 +9,7 @@
 El objetivo principal del presente proyecto es entregar un “Minimum Viable Product” (MVP), que proporcione una recomendacion a los usuarios.
 Un MVP es un producto con suficientes características para satisfacer a los clientes iniciales y proporcionar retroalimentación para el desarrollo futuro. 
 
-## Situacion y rol a desempeñar.
+## Situacion.
 
 Para lograr el objetivo principal, debemos desarrollar procesos de ETL, un Analisas Exploratorio de los Datos y desarrollar un proyecto de machine learning.
 Este proceso busca desarrollar, entrenar, desplegar y monitorear un modelo que aprende de los datos. En este caso, los pasos seguidos fueron los siguientes:
@@ -42,7 +44,7 @@ def get_director(director)
 
 _Sus respectivas descripciones y codigos estan en el archivo 'mvp_funciones' y 'main' en este repositorio_
 
-Rol a desarrollar
+## Rol a desarrollar
 Desempeñando un rol de Data Scientist he seguido un proceso integral desde la obtencion de los datos hasta el despliegue de la api. 
 Como comentario personal, hace dos semanas y media no hubiera creido hacer lo que hice. Sin embargo, habiendo descubierto en el proceso fortalezas que desconocia y debilidades sobre las que debo trabajar, veo lo hecho en retrospectiva y encuentro mucho que poder cambiar y mejorar. 
 Pero como se dijo, y lo pude constatar, la velocidad es crucial!
