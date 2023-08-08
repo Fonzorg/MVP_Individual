@@ -16,7 +16,7 @@ app = FastAPI()
 
 # Entrenamiento del modelo de recomendación
 tfidf = TfidfVectorizer()
-tfidf_matrix = tfidf.fit_transform(df_movies['title'])
+tfidf_matrix = tfidf.fit_transform(df_movies['titulo_original'])
 matriz_simil = cosine_similarity(tfidf_matrix)
  
 @app.get("/peliculas_idioma/{Idioma}")
