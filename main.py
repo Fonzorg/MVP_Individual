@@ -8,7 +8,7 @@ df_duracion = pd.read_csv('duracion.csv')
 df_franquicia = pd.read_csv('franquicias.csv')
 df_paises = pd.read_csv('paises.csv')
 df_productoras = pd.read_csv('productoras.csv')
-df_diectores = pd.read_csv('dir.csv')
+df_directores = pd.read_csv('dir.csv')
 df_movies = pd.read_csv('movies_ampliada.csv')
 
 
@@ -16,8 +16,10 @@ app = FastAPI()
 
 # Entrenamiento del modelo de recomendación
 tfidf = TfidfVectorizer()
-tfidf_matrix = tfidf.fit_transform(df_movies['titulo_original'])
+tfidf_matrix = tfidf.fit_transform(df_movies['titlo_original'])
 matriz_simil = cosine_similarity(tfidf_matrix)
+
+# Funciones: 
  
 @app.get("/peliculas_idioma/{Idioma}")
 def pelicula_idioma(idioma):
@@ -26,16 +28,12 @@ def pelicula_idioma(idioma):
     return print(cantidad, ' peliculas fueron estrenadas en idioma', idioma)
 
 
-
-
 @app.get("/peliculas_duracion/{Pelicula}")
 def duracion_pelicula(pelicula):
 
     duracion = df_duracion.loc[df_duracion['titulo_original'] == pelicula]['duracion'].values[0]
     año = df_duracion.loc[df_duracion['titulo_original'] == pelicula]['año_realizacion'].values[0]
     return print(pelicula, '. Duracion:', duracion, '. Año', año)
-
-
 
 
 @app.get("/franquicia/{Franquicia}")
@@ -48,13 +46,11 @@ def franquicia(franquicia):
     return print('La franquicia', franquicia, 'posee', cantidad_titulos, 'peliculas', 'una ganancia total de', recaudacion, 'y una ganancia promedio de', recaudacion_prom)
 
 
-
 @app.get("/peliculas_pais/{Pais}")
 def pelicula_pais(pais):
     pais = pais
     cantidad = df_paises['pais'].value_counts()[pais]
     return print('Se producjeron ', cantidad, ' peliculas en', pais)
-
 
 
 @app.get("/productoras_exitosas/{Productora}")
@@ -63,31 +59,32 @@ def productora_exitosa(compañia):
     revenue = funcion_productora['recaudacion'].sum()
     revenue_res = ('{:,}'.format(round(revenue)))
     cantidad = funcion_productora['pelicula_id'].nunique()
-
     return print(
         'La productora',compañia,'ha tenido un revenue total de USD$'+revenue_res+','
         '\ny realizo un total de',cantidad,'peliculas.'
         )
 
 
-
 @app.get("/get_director/{nombre_director}")
 def get_director(director):
     director = director
-    dir_subset = df_diectores.loc[df_diectores['director'].isin([director])]
+    dir_subset = df_directores.loc[df_directores['director'].isin([director])]
     retorno = dir_subset['recaudacion'].sum()
     cantidad_peliculas = dir_subset['pelicula_id'].nunique()
     lista = dir_subset[['titulo_original', 'fecha_realizacion', 'recaudacion', 'presupuesto', 'ganancia']].values.tolist()
-
-
-
     return print('El director', director, 'ha generado una retorno total de', retorno, ', y ha dirigido', cantidad_peliculas, 'peliculas, cuyos nombres, fecha de lanzamiento, retorno, costo y ganancia son:' 
     '\n',  lista)
 
 
-@app.get("/recomendacion/{director}")
-def recomendacion_por_director(director):
-    dir_subset = mvp_funcion_dir.loc[mvp_funcion_dir['director'].isin([director])]
-    recomendacion = dir_subset.loc[dir_subset['director'] == director]['titulo_original'].tolist()
-    return print('Director: ', director,
-                 '\n', 'Pelis recomendadas:', recomendacion)
+# Recomendacion:
+
+@app.get("/recomendacion/{titulo}")
+def recomendacion(titulo: str):
+    indice_peli = df_movies[df_movies['titulo_original'] == titulo].index[0]
+    sim_scores = list(enumerate(matriz_simil[indice_peli]))
+    sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
+    top_pelis_simil = [df_movies.iloc[sim_score[0]]['titulo_original'] for sim_score in sim_scores[1:6]]
+    return {
+        'titulo': titulo,
+        'recomendaciones': top_pelis_simil
+    }
