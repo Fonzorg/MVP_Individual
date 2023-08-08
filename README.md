@@ -36,7 +36,7 @@ _Este analisis se halla en el archivo 'eda_movies' en este repositorio_
 
 # Algoritmo machine learning: 
 Se refiere a la elección del método o técnica que se aplicará al problema. 
-En este caso me decidi por ........... para aplicar al problema, vale decir a la recoemndacion solicitada en la consigna.
+En este caso me decidi por similitud de coceno para la recoemndacion solicitada en la consigna. Este recomendara las cinco peliculas mas parecidas al titulo dado.
 Luego he entrenado el modelo y validado el mismo logrando optimizarlo.
 
 # Generar una api y desplegar la misma por Rendel: 
