@@ -18,7 +18,7 @@ Este proceso busca desarrollar, entrenar, desplegar y monitorear un modelo que a
 
 # Adquisición de datos: 
 Consistio en obtener los datos que se usaron en el modelo.
-En este caso particular, tales datos fueron extraidos de dos archivow .csv: 'movies' y 'credit' que luego se normalizaron y unieron en un solo dataset usado para el desarrollo de este proyecto: 'dataset_normalizado.csv'
+En este caso particular, tales datos fueron extraidos de dos archivow .csv: 'movies' y 'credit' que luego se normalizaron y unieron en un solo dataset usado para el desarrollo de este proyecto: 'dataset_normalizado.pkl'. Vale aclarar que se empleo un archivo pickel debido a que por requerimientos de memoria, desplegarlo con un .csv resultaba imposible.
 
 # Preprocesamiento: 
 Incluyo procedimientos de ETL, como normalizar, combinar, eliminar y crear variables, todo ello en busca de mejorar su calidad y adecuarlas al modelo.
