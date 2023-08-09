@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://github.com/Fonzorg/MVP_Individual/assets/108815192/c418e5f8-0524-4e7a-83ea-eebd78bc3de3" />
+</p>
+
 ![LogoREADME](https://github.com/Fonzorg/MVP_Individual/assets/108815192/c418e5f8-0524-4e7a-83ea-eebd78bc3de3)
 
 # MVP Proyecto Individual
@@ -16,7 +20,7 @@ Este proceso busca desarrollar, entrenar, desplegar y monitorear un modelo que a
 
 # Adquisición de datos: 
 Consistio en obtener los datos que se usaron en el modelo.
-En este caso particular, tales datos fueron extraidos de dos archivow .csv: 'movies' y 'credit'.
+En este caso particular, tales datos fueron extraidos de dos archivow .csv: 'movies' y 'credit' que luego se normalizaron y unieron en un solo dataset usado para el desarrollo de este proyecto: 'dataset_normalizado.csv'
 
 # Preprocesamiento: 
 Incluyo procedimientos de ETL, como normalizar, combinar, eliminar y crear variables, todo ello en busca de mejorar su calidad y adecuarlas al modelo.
@@ -27,7 +31,8 @@ Siguiendo las consignas del proyecto, se realizaron las siguientes Transformacio
  _Se creo la columna 'año_realizacion' donde extraerán el año de la fecha de estreno, y 'ganancia', con el cociente entre 'recaudacion' y 'presupuesto'. En este ultimo caso, cuando no habian datos, se rellenaba el registro con el valor 0._
  _Se eliminaron varias colimnas que no se utilizaron._
  _Se crearn datasets mas pequeños y acordes a las necesidades de las distintas funciones desarrolladas._
-_El prosesamiento aludido esta en dos etapas, dividido en dos archivos: 'mvp_transformaciones' y 'mvp_final_transformacion' en este repositorio.
+ 
+_El prosesamiento aludido se puede analisar en el archivo: 'mvp_transformaciones' en este repositorio._
 
 # Análisis exploratorio (EDA): 
 Implico visualizar y correlacionar los datos para entenderlos mejor y detectar posibles problemas o patrones. 
@@ -48,7 +53,7 @@ def peliculas_pais(pais)
 def productoras_exitosas(productora)
 def get_director(director)
 
-_Sus respectivas descripciones y codigos estan en el archivo 'mvp_funciones' y 'main' en este repositorio_
+_Sus respectivas descripciones y codigos estan en el archivo 'main' en este repositorio_
 
 ## Rol a desarrollar
 Desempeñando un rol de Data Scientist he seguido un proceso integral desde la obtencion de los datos hasta el despliegue de la api. 
