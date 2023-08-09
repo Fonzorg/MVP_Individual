@@ -2,11 +2,6 @@
   <img src="https://github.com/Fonzorg/MVP_Individual/assets/108815192/c418e5f8-0524-4e7a-83ea-eebd78bc3de3" />
 </p>
 
-<p align="center">
-  <h1># MVP Proyecto Individual
-## Machine Learning Operations (MLOps)</h1>
-</p>
-
 # MVP Proyecto Individual
 ## Machine Learning Operations (MLOps)
 ### _Alfonzo Rubianes Gravier_
