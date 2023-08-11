@@ -13,12 +13,12 @@ Un MVP es un producto con suficientes características para satisfacer a los cli
 
 ## Tareas desarrolladas.
 
-Para lograr el objetivo principal, debemos desarrollar procesos de ETL, un Analisas Exploratorio de los Datos y desarrollar un proyecto de machine learning.
+Para lograr el objetivo principal, debemos desarrollar procesos de ETL, un Analisas Exploratorio de los Datos y desarrollar un modelo de machine learning.
 Este proceso busca desarrollar, entrenar, desplegar y monitorear un modelo que aprende de los datos. En este caso, los pasos seguidos fueron los siguientes:
 
 # Adquisición de datos: 
 Consistio en obtener los datos que se usaron en el modelo.
-En este caso particular, tales datos fueron extraidos de dos archivow .csv: 'movies' y 'credit' que luego se normalizaron y unieron en un solo dataset usado para el desarrollo de este proyecto: 'dataset_normalizado.pkl'. Vale aclarar que se empleo un archivo pickel debido a que por requerimientos de memoria, desplegarlo con un .csv resultaba imposible.
+En este caso particular, tales datos fueron extraidos de dos archivow .csv: 'movies' y 'credit' que luego se normalizaron y unieron en un solo dataset usado para el desarrollo de este proyecto: 'dataset_normalizado.csv'.
 
 # Preprocesamiento: 
 Incluyo procedimientos de ETL, como normalizar, combinar, eliminar y crear variables, todo ello en busca de mejorar su calidad y adecuarlas al modelo.
@@ -28,7 +28,7 @@ Siguiendo las consignas del proyecto, se realizaron las siguientes Transformacio
  _Los valores nulos del campo release date deben eliminarse._
  _Se creo la columna 'año_realizacion' donde extraerán el año de la fecha de estreno, y 'ganancia', con el cociente entre 'recaudacion' y 'presupuesto'. En este ultimo caso, cuando no habian datos, se rellenaba el registro con el valor 0._
  _Se eliminaron varias colimnas que no se utilizaron._
- _Se crearn datasets mas pequeños y acordes a las necesidades de las distintas funciones desarrolladas._
+ _Y todo ello derivo en la creacion de un dataset normalizado para las funciones y otro para la recomendacion_
  
 _El prosesamiento aludido se puede analisar en el archivo: 'mvp_transformaciones' en este repositorio._
 
@@ -38,7 +38,7 @@ Vale decir que este paso suele hacerse tambien antes de preprosesamiento.
 _Este analisis se halla en el archivo 'eda_movies' en este repositorio_
 
 # Algoritmo machine learning: 
-Se refiere a la elección del método o técnica que se aplicará al problema. 
+Se refiere a la elección del método o técnica que se aplicaro al problema. 
 En este caso me decidi por similitud de coceno para la recoemndacion solicitada en la consigna. Este recomendara las cinco peliculas mas parecidas al titulo dado.
 Luego he entrenado el modelo y validado el mismo logrando optimizarlo.
 
@@ -50,6 +50,7 @@ def franquicia(franquicia)
 def peliculas_pais(pais)
 def productoras_exitosas(productora)
 def get_director(director)
+def recomendaciones(titulo)
 
 _Sus respectivas descripciones y codigos estan en el archivo 'main' en este repositorio_
 
