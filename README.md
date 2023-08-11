@@ -53,6 +53,7 @@ def get_director(director)
 def recomendaciones(titulo)
 
 _Sus respectivas descripciones y codigos estan en el archivo 'main' en este repositorio_
+link de acceso a la api: https://deploy5-trabajo-individual.onrender.com
 
 ## Rol a desarrollar
 Desempeñando un rol de Data Scientist he seguido un proceso integral desde la obtencion de los datos hasta el despliegue de la api. 
